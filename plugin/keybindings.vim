@@ -6,7 +6,10 @@ nmap <Leader>s :write<Enter>
 nmap <Leader>r :redraw!<Enter>
 
 " Copy the relative path of the current file to the clipboard
-nmap <Leader>cf :silent !echo -n % \| pbcopy<Enter>
+nmap <Leader>cf :silent !echo -n % \| xclip -selection clipboard<Enter>
+
+" Copy the full path of the current file to the clipboard
+nmap <Leader>cp :silent !echo -n %:p \| xclip -selection clipboard<Enter>
 
 " Move normally between wrapped lines
 nmap j gj
@@ -68,3 +71,20 @@ xnoremap p "_dP
 
 " Switch to last file
 nnoremap <Leader><Leader> <c-^>
+
+" Quickly navigate in insert and command modes
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+cnoremap <C-h> <Left>
+cnoremap <C-j> <Down>
+cnoremap <C-k> <Up>
+cnoremap <C-l> <Right>
+
+" Vim LaTeX Preview Config
+let g:livepreview_previewer = 'zathura'
+augroup live_preview
+autocmd!
+autocmd Filetype tex setl updatetime=1
+augroup end

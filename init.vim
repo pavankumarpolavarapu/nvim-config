@@ -92,4 +92,11 @@ Plug 'wincent/pinnacle'
 " Vim elm syntax
 Plug 'andys8/vim-elm-syntax'
 
+" Vim tabout
+" Plug 'abecodes/tabout.nvim'
+
+" Vim plugin for live previewing LaTeX PDF output
+Plug 'xuhdev/vim-latex-live-preview'
+
+
 call plug#end()

@@ -19,3 +19,9 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 " Focus statusline
 autocmd BufEnter,FocusGained,VimEnter,WinEnter * call dot#focus#focus_statusline()
 autocmd FocusLost,WinLeave * call dot#focus#blur_statusline()
+
+" Latex Preview
+augroup live_preview
+  autocmd!
+  autocmd Filetype tex setl updatetime=1
+augroup end
